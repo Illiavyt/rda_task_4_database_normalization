@@ -1,5 +1,5 @@
--- Видалення старої бази та створення нової
-DROP DATABASE IF EXISTS ShopDB;
+-- Видалення старої бази (точно за завданням)
+DROP DATABASE ShopDB;
 CREATE DATABASE ShopDB;
 USE ShopDB;
 
@@ -46,7 +46,7 @@ CREATE TABLE ProductInventory (
     FOREIGN KEY (WarehouseID) REFERENCES Warehouses(ID)
         ON DELETE CASCADE
         ON UPDATE CASCADE,
-    UNIQUE (ProductID, WarehouseID)  -- 🔒 гарантує унікальність пари товар+склад
+    UNIQUE (ProductID, WarehouseID)
 ) ENGINE=InnoDB;
 
 -- =======================================
